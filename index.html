@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>11+ Prep Portal - Practice Quests</title>
+<style>
+:root{
+  --ink:#152238;
+  --muted:#5d6b80;
+  --bg:#f4f7fb;
+  --card:#ffffff;
+  --line:#d9e2ef;
+  --blue:#1f6feb;
+  --blue2:#0f4cb8;
+  --green:#12915a;
+  --amber:#f4b000;
+  --red:#e05353;
+  --soft:#eef5ff;
+  --shadow:0 18px 45px rgba(21,34,56,.12);
+  --radius:24px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at top left,rgba(31,111,235,.16),transparent 30rem),
+    radial-gradient(circle at 90% 0,rgba(244,176,0,.18),transparent 26rem),
+    linear-gradient(180deg,#fbfdff 0%,var(--bg) 100%);
+  min-height:100vh;
+}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+.shell{width:min(1160px,calc(100% - 32px));margin:0 auto;padding:24px 0 44px}
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px 16px;border:1px solid rgba(217,226,239,.9);border-radius:22px;
+  background:rgba(255,255,255,.78);box-shadow:0 10px 30px rgba(21,34,56,.08);backdrop-filter:blur(10px);
+  position:sticky;top:10px;z-index:5;
+}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:-.03em}
+.logo{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--blue),#6aa2ff);box-shadow:0 8px 18px rgba(31,111,235,.25)}
+.nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.nav a,.nav button{border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:999px;padding:9px 12px;font-weight:750;box-shadow:none;cursor:pointer}
+.nav a.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hero{margin-top:22px;padding:34px;border-radius:32px;background:rgba(255,255,255,.86);border:1px solid var(--line);box-shadow:var(--shadow);display:grid;grid-template-columns:1.45fr .9fr;gap:28px;align-items:center;overflow:hidden}
+h1{margin:0 0 10px;font-size:clamp(2rem,5vw,4rem);letter-spacing:-.06em;line-height:.98}
+.lead{margin:0;color:var(--muted);font-size:1.08rem;line-height:1.55;max-width:67ch}
+.hero-panel{border-radius:26px;background:linear-gradient(145deg,#ecf4ff,#fff8df);padding:24px;border:1px solid rgba(217,226,239,.9)}
+.hero-panel h2,.card h2,.section-head h2{margin:0 0 8px;font-size:1.35rem;letter-spacing:-.03em}
+.hero-panel p,.card p{color:var(--muted);line-height:1.45;margin:0 0 16px}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:18px}
+.card{grid-column:span 4;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:0 12px 32px rgba(21,34,56,.09);transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease;min-height:210px;display:flex;flex-direction:column;justify-content:space-between}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:rgba(31,111,235,.35)}
+.card.wide{grid-column:span 6}.card.full{grid-column:1/-1}.card.small{grid-column:span 3;min-height:150px}.card.subject{min-height:245px}
+.icon{width:52px;height:52px;border-radius:18px;display:grid;place-items:center;background:var(--soft);color:var(--blue);font-weight:950;font-size:1.2rem;margin-bottom:14px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:15px;padding:12px 16px;background:var(--blue);color:#fff;font-weight:900;box-shadow:0 10px 24px rgba(31,111,235,.24);border:0;cursor:pointer;min-height:46px}
+.btn:hover{background:var(--blue2)}
+.btn.secondary{background:#eef4ff;color:var(--ink);box-shadow:none;border:1px solid var(--line)}
+.btn.green{background:var(--green)}
+.btn.dark{background:var(--ink)}
+.btn.ghost{background:#fff;color:var(--ink);box-shadow:none;border:1px solid var(--line)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-top:28px;margin-bottom:12px}
+.section-head p{margin:0;color:var(--muted)}
+.login-card{max-width:520px;margin:28px auto 0;background:var(--card);border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow);padding:26px}
+.field{display:grid;gap:7px;margin:0 0 14px}.field label{font-weight:850}.field input,.field select{border:1px solid var(--line);border-radius:16px;padding:14px 15px;background:#fff;color:var(--ink);outline:none}.field input:focus,.field select:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(31,111,235,.12)}
+.notice{border:1px solid #cfe0f8;border-radius:18px;background:#f2f7ff;padding:14px;color:#334765;line-height:1.45;margin-top:14px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.kpi{border:1px solid var(--line);border-radius:18px;background:#fff;padding:14px}.kpi b{display:block;font-size:1.6rem;letter-spacing:-.04em}.kpi span{color:var(--muted);font-size:.9rem}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 11px;color:#4d6078;font-weight:750;font-size:.92rem}
+.mode-label{display:inline-flex;align-items:center;gap:7px;border-radius:999px;padding:7px 10px;font-size:.86rem;font-weight:900;background:#f3f7ff;color:#31527d;border:1px solid #dce8f9;margin-bottom:10px}.dot{width:9px;height:9px;border-radius:50%;background:var(--blue)}
+.table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:16px}.table-wrap{border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:16px}.table th,.table td{text-align:left;border-bottom:1px solid var(--line);padding:12px;background:#fff}.table th{background:#f1f6ff;color:#42556f}.table tr:last-child td{border-bottom:0}
+.footer{margin-top:28px;color:var(--muted);text-align:center;font-size:.92rem}.hide{display:none!important}
+@media(max-width:880px){.hero{grid-template-columns:1fr}.card,.card.wide,.card.small{grid-column:1/-1}.topbar{position:static;align-items:flex-start;flex-direction:column}.nav{justify-content:flex-start}.kpis{grid-template-columns:1fr}.shell{width:min(100% - 20px,1160px);padding-top:10px}}
+</style>
+</head>
+<body>
+<main class="shell">
+
+<header class="topbar">
+  <a class="brand" href="dashboard.html"><span class="logo">11+</span><span>MathBase Prep</span></a>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="dashboard.html" data-active="dashboard">Dashboard</a>
+    <a href="practice.html" data-active="practice">Practice Quests</a>
+    <a href="exams.html" data-active="exams">Exam Practice</a>
+    <a href="maths.html" data-active="maths">Maths</a>
+    <a href="english.html" data-active="english">English</a>
+    <a href="verbal-reasoning.html" data-active="vr">Verbal Reasoning</a>
+    <button type="button" onclick="signOut()">Sign out</button>
+  </nav>
+</header>
+
+
+<section class="hero">
+  <div>
+    <div class="mode-label"><span class="dot"></span> Practice quest menu</div>
+    <h1>Practice Quests</h1>
+    <p class="lead">Skill-building activities for students to use outside a full test. Each button opens the correct hosted practice activity.</p>
+  </div>
+  <div class="hero-panel">
+    <h2>Best for</h2>
+    <p>Topic confidence, revision, immediate feedback and low-pressure practice.</p>
+    <div class="notice">Logged in as <strong data-name>student</strong></div>
+  </div>
+</section>
+<section class="grid">
+  <article class="card wide"><div><div class="icon">M</div><h2>Maths Practice Quest</h2><p>Topic-based 11+ maths practice covering arithmetic, fractions, ratio, problem solving, measure, shape, spatial reasoning, probability and data.</p></div><div class="actions"><a class="btn" href="https://mathbase1.github.io/11plus-practice-quest/" data-launch="mathPractice">Open Maths Practice Quest</a></div></article>
+  <article class="card wide"><div><div class="icon">E</div><h2>English Practice Quest</h2><p>11+ English practice using selectable answers, cloze, reordering, proofreading and comprehension-style tasks.</p></div><div class="actions"><a class="btn" href="https://mathbase1.github.io/eleven-plus-English-practice/" data-launch="englishPractice">Open English Practice Quest</a></div></article>
+  <article class="card wide"><div><div class="icon">VR</div><h2>Verbal Reasoning Practice Quest</h2><p>Verbal reasoning practice for vocabulary, logic, word relationships, code patterns and reasoning speed.</p></div><div class="actions"><a class="btn" href="https://mathbase1.github.io/eleven-plus-verbal-reasoning-practice/" data-launch="vrPractice">Open VR Practice Quest</a></div></article>
+  <article class="card wide"><div><div class="icon">→</div><h2>Need exam conditions?</h2><p>Use the exam practice menu when the student is ready for a standard timed simulation.</p></div><div class="actions"><a class="btn green" href="exams.html">Go to Exam Practice</a></div></article>
+</section>
+
+<footer class="footer">11+ preparation prototype menu · HTML-only flat files for GitHub preview</footer>
+</main>
+<script>
+const QUIZ_LINKS = {'mathPractice': 'https://mathbase1.github.io/11plus-practice-quest/', 'mathExam': 'https://mathbase1.github.io/11plus-exam/', 'englishPractice': 'https://mathbase1.github.io/eleven-plus-English-practice/', 'englishExam': 'https://mathbase1.github.io/eleven-plus-English-exam/', 'vrPractice': 'https://mathbase1.github.io/eleven-plus-verbal-reasoning-practice/', 'vrExam': 'https://mathbase1.github.io/eleven-plus-verbal-reasoning-exam/'};
+function byId(id){return document.getElementById(id)}
+function getName(){return localStorage.getItem('mb11LearnerName') || 'Guest learner'}
+function setName(name){localStorage.setItem('mb11LearnerName', name && name.trim() ? name.trim() : 'Guest learner')}
+function getHistory(){try{return JSON.parse(localStorage.getItem('mb11LaunchHistory')||'[]')}catch(e){return []}}
+function saveHistory(history){localStorage.setItem('mb11LaunchHistory', JSON.stringify(history.slice(-40)))}
+function trackLaunch(key){
+  const history = getHistory();
+  history.push({key, url:QUIZ_LINKS[key], at:new Date().toISOString()});
+  saveHistory(history);
+}
+function openQuiz(key){trackLaunch(key); window.location.href = QUIZ_LINKS[key];}
+function signOut(){localStorage.removeItem('mb11LearnerName'); window.location.href='index.html'}
+function hydrateShell(active){
+  document.querySelectorAll('[data-name]').forEach(el => el.textContent = getName());
+  document.querySelectorAll('[data-active="'+active+'"]').forEach(el => el.classList.add('active'));
+  document.querySelectorAll('[data-launch]').forEach(el => el.addEventListener('click', () => trackLaunch(el.getAttribute('data-launch'))));
+  const h = getHistory();
+  document.querySelectorAll('[data-launch-count]').forEach(el => el.textContent = String(h.length));
+  const last = h[h.length-1];
+  document.querySelectorAll('[data-last-launch]').forEach(el => el.textContent = last ? last.key.replace(/([A-Z])/g,' $1').replace(/^./,c=>c.toUpperCase()) : 'None yet');
+}
+
+hydrateShell('practice');
+</script>
+</body>
+</html>
