@@ -1,144 +1,178 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>11+ Prep Portal - Practice Quests</title>
+<title>11+ Practice Menu - MathBase Prep</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#152238;
-  --muted:#5d6b80;
-  --bg:#f4f7fb;
-  --card:#ffffff;
-  --line:#d9e2ef;
-  --blue:#1f6feb;
-  --blue2:#0f4cb8;
-  --green:#12915a;
-  --amber:#f4b000;
-  --red:#e05353;
-  --soft:#eef5ff;
-  --shadow:0 18px 45px rgba(21,34,56,.12);
+  --ink:#111827;
+  --ink-2:#1f2937;
+  --muted:#667085;
+  --soft:#f6f8fb;
+  --surface:#ffffff;
+  --line:#e4e7ec;
+  --brand:#173b82;
+  --brand-2:#0f766e;
+  --brand-3:#6d28d9;
+  --gold:#b7791f;
+  --success:#047857;
+  --danger:#b42318;
+  --shadow:0 20px 60px rgba(15,23,42,.09);
+  --shadow-soft:0 12px 36px rgba(15,23,42,.07);
   --radius:24px;
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   margin:0;
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  font-family:"Manrope",Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
   color:var(--ink);
   background:
-    radial-gradient(circle at top left,rgba(31,111,235,.16),transparent 30rem),
-    radial-gradient(circle at 90% 0,rgba(244,176,0,.18),transparent 26rem),
-    linear-gradient(180deg,#fbfdff 0%,var(--bg) 100%);
+    radial-gradient(circle at 12% 0%, rgba(23,59,130,.10), transparent 28rem),
+    radial-gradient(circle at 92% 4%, rgba(15,118,110,.10), transparent 30rem),
+    linear-gradient(180deg,#fbfcff 0%,#f4f7fb 100%);
   min-height:100vh;
 }
 a{color:inherit;text-decoration:none}
 button,input,select{font:inherit}
-.shell{width:min(1160px,calc(100% - 32px));margin:0 auto;padding:24px 0 44px}
+.shell{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:22px 0 42px}
 .topbar{
   display:flex;align-items:center;justify-content:space-between;gap:16px;
-  padding:14px 16px;border:1px solid rgba(217,226,239,.9);border-radius:22px;
-  background:rgba(255,255,255,.78);box-shadow:0 10px 30px rgba(21,34,56,.08);backdrop-filter:blur(10px);
-  position:sticky;top:10px;z-index:5;
+  padding:12px 14px;border:1px solid rgba(228,231,236,.9);border-radius:22px;
+  background:rgba(255,255,255,.82);box-shadow:0 12px 34px rgba(15,23,42,.06);backdrop-filter:blur(14px);
+  position:sticky;top:12px;z-index:20;
 }
-.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:-.03em}
-.logo{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--blue),#6aa2ff);box-shadow:0 8px 18px rgba(31,111,235,.25)}
-.nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-.nav a,.nav button{border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:999px;padding:9px 12px;font-weight:750;box-shadow:none;cursor:pointer}
-.nav a.active{background:var(--ink);color:#fff;border-color:var(--ink)}
-.hero{margin-top:22px;padding:34px;border-radius:32px;background:rgba(255,255,255,.86);border:1px solid var(--line);box-shadow:var(--shadow);display:grid;grid-template-columns:1.45fr .9fr;gap:28px;align-items:center;overflow:hidden}
-h1{margin:0 0 10px;font-size:clamp(2rem,5vw,4rem);letter-spacing:-.06em;line-height:.98}
-.lead{margin:0;color:var(--muted);font-size:1.08rem;line-height:1.55;max-width:67ch}
-.hero-panel{border-radius:26px;background:linear-gradient(145deg,#ecf4ff,#fff8df);padding:24px;border:1px solid rgba(217,226,239,.9)}
-.hero-panel h2,.card h2,.section-head h2{margin:0 0 8px;font-size:1.35rem;letter-spacing:-.03em}
-.hero-panel p,.card p{color:var(--muted);line-height:1.45;margin:0 0 16px}
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:18px}
-.card{grid-column:span 4;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:0 12px 32px rgba(21,34,56,.09);transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease;min-height:210px;display:flex;flex-direction:column;justify-content:space-between}
-.card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:rgba(31,111,235,.35)}
-.card.wide{grid-column:span 6}.card.full{grid-column:1/-1}.card.small{grid-column:span 3;min-height:150px}.card.subject{min-height:245px}
-.icon{width:52px;height:52px;border-radius:18px;display:grid;place-items:center;background:var(--soft);color:var(--blue);font-weight:950;font-size:1.2rem;margin-bottom:14px}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:15px;padding:12px 16px;background:var(--blue);color:#fff;font-weight:900;box-shadow:0 10px 24px rgba(31,111,235,.24);border:0;cursor:pointer;min-height:46px}
-.btn:hover{background:var(--blue2)}
-.btn.secondary{background:#eef4ff;color:var(--ink);box-shadow:none;border:1px solid var(--line)}
-.btn.green{background:var(--green)}
-.btn.dark{background:var(--ink)}
-.btn.ghost{background:#fff;color:var(--ink);box-shadow:none;border:1px solid var(--line)}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-top:28px;margin-bottom:12px}
-.section-head p{margin:0;color:var(--muted)}
-.login-card{max-width:520px;margin:28px auto 0;background:var(--card);border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow);padding:26px}
-.field{display:grid;gap:7px;margin:0 0 14px}.field label{font-weight:850}.field input,.field select{border:1px solid var(--line);border-radius:16px;padding:14px 15px;background:#fff;color:var(--ink);outline:none}.field input:focus,.field select:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(31,111,235,.12)}
-.notice{border:1px solid #cfe0f8;border-radius:18px;background:#f2f7ff;padding:14px;color:#334765;line-height:1.45;margin-top:14px}
-.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.kpi{border:1px solid var(--line);border-radius:18px;background:#fff;padding:14px}.kpi b{display:block;font-size:1.6rem;letter-spacing:-.04em}.kpi span{color:var(--muted);font-size:.9rem}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 11px;color:#4d6078;font-weight:750;font-size:.92rem}
-.mode-label{display:inline-flex;align-items:center;gap:7px;border-radius:999px;padding:7px 10px;font-size:.86rem;font-weight:900;background:#f3f7ff;color:#31527d;border:1px solid #dce8f9;margin-bottom:10px}.dot{width:9px;height:9px;border-radius:50%;background:var(--blue)}
-.table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:16px}.table-wrap{border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:16px}.table th,.table td{text-align:left;border-bottom:1px solid var(--line);padding:12px;background:#fff}.table th{background:#f1f6ff;color:#42556f}.table tr:last-child td{border-bottom:0}
-.footer{margin-top:28px;color:var(--muted);text-align:center;font-size:.92rem}.hide{display:none!important}
-@media(max-width:880px){.hero{grid-template-columns:1fr}.card,.card.wide,.card.small{grid-column:1/-1}.topbar{position:static;align-items:flex-start;flex-direction:column}.nav{justify-content:flex-start}.kpis{grid-template-columns:1fr}.shell{width:min(100% - 20px,1160px);padding-top:10px}}
+.brand{display:flex;align-items:center;gap:12px;min-width:max-content}
+.logo{
+  width:44px;height:44px;border-radius:15px;display:grid;place-items:center;
+  color:white;font-weight:950;letter-spacing:-.07em;background:linear-gradient(135deg,#173b82,#0f766e);
+  box-shadow:0 10px 28px rgba(23,59,130,.20)
+}
+.brand-text strong{display:block;font-weight:900;letter-spacing:-.035em;line-height:1.05}.brand-text span{display:block;font-size:.78rem;color:var(--muted);font-weight:800;letter-spacing:.02em}
+.nav{display:flex;align-items:center;justify-content:flex-end;gap:7px;flex-wrap:wrap}
+.nav a,.nav button,.top-pill{
+  border:1px solid var(--line);border-radius:999px;background:#fff;color:#475467;padding:8px 11px;
+  font-size:.88rem;font-weight:850;box-shadow:none;cursor:pointer;white-space:nowrap
+}
+.nav a:hover,.nav button:hover{border-color:#b8c1cf;color:var(--ink);background:#f8fafc}.nav a.active{background:var(--ink);border-color:var(--ink);color:#fff}
+.student-pill{display:inline-flex;align-items:center;gap:8px;color:#344054}.student-pill::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--success)}
+.hero{
+  margin-top:24px;padding:36px;border-radius:34px;background:rgba(255,255,255,.90);border:1px solid var(--line);box-shadow:var(--shadow);
+  display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:center;overflow:hidden;position:relative
+}
+.hero:after{content:"";position:absolute;right:-90px;top:-90px;width:230px;height:230px;border-radius:999px;background:linear-gradient(135deg,rgba(23,59,130,.11),rgba(15,118,110,.11));pointer-events:none}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:12px;padding:7px 10px;border-radius:999px;background:#eef4ff;color:#173b82;border:1px solid #d9e6ff;font-weight:900;font-size:.84rem}.eyebrow .spark{width:8px;height:8px;border-radius:50%;background:#173b82}
+h1{margin:0 0 12px;font-size:clamp(2.1rem,5vw,4.55rem);line-height:.96;letter-spacing:-.07em;max-width:12ch}
+.lead{margin:0;color:var(--muted);font-size:clamp(1rem,1.4vw,1.13rem);line-height:1.62;max-width:68ch}
+.hero-card{position:relative;z-index:1;border-radius:28px;background:linear-gradient(145deg,#f8fbff,#ffffff);border:1px solid var(--line);padding:22px;box-shadow:var(--shadow-soft)}
+.hero-card h2,.card h2,.panel h2,.section-head h2{margin:0 0 8px;letter-spacing:-.035em;line-height:1.14}.hero-card p,.card p,.panel p{margin:0;color:var(--muted);line-height:1.52}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:18px}.grid.tight{gap:12px}
+.card{
+  grid-column:span 4;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow-soft);
+  min-height:218px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#c6d3e6}.card.wide{grid-column:span 6}.card.full{grid-column:1/-1}.card.small{grid-column:span 3;min-height:155px}.card.tall{min-height:260px}
+.card[data-theme="maths"] .icon{background:#eef4ff;color:#173b82}.card[data-theme="english"] .icon{background:#f4f3ff;color:#6d28d9}.card[data-theme="verbal"] .icon{background:#ecfdf3;color:#047857}.card[data-theme="exam"] .icon{background:#fff7ed;color:#b7791f}.card[data-theme="practice"] .icon{background:#eff6ff;color:#0f62fe}
+.icon{width:50px;height:50px;border-radius:17px;display:grid;place-items:center;font-weight:950;font-size:1rem;margin-bottom:15px;letter-spacing:-.04em}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:15px;min-height:46px;padding:12px 16px;background:var(--brand);border:1px solid var(--brand);color:#fff;font-weight:950;box-shadow:0 12px 28px rgba(23,59,130,.20);cursor:pointer}.btn:hover{background:#102e66;border-color:#102e66}.btn.secondary{background:#fff;color:var(--ink);border-color:var(--line);box-shadow:none}.btn.secondary:hover{background:#f8fafc;border-color:#c9d2df}.btn.teal{background:var(--brand-2);border-color:var(--brand-2)}.btn.purple{background:var(--brand-3);border-color:var(--brand-3)}.btn.gold{background:var(--gold);border-color:var(--gold)}.btn.fullwidth{width:100%}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:30px 0 12px}.section-head p{margin:0;color:var(--muted);line-height:1.45}.section-head h2{font-size:1.35rem}
+.panel{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow-soft)}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.kpi{border:1px solid var(--line);border-radius:18px;background:#fff;padding:15px}.kpi strong{display:block;font-size:1.7rem;letter-spacing:-.06em}.kpi span{display:block;color:var(--muted);font-size:.88rem;font-weight:800}.chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 11px;color:#4b5563;font-weight:850;font-size:.9rem}.chip.dark{background:var(--ink);color:white;border-color:var(--ink)}
+.login-card{max-width:560px;margin:26px auto 0;background:#fff;border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow);padding:26px}.field{display:grid;gap:7px;margin-bottom:14px}.field label{font-weight:900;color:#344054}.field input,.field select{border:1px solid var(--line);border-radius:16px;background:#fff;padding:14px 15px;outline:none;color:var(--ink);min-height:50px}.field input:focus,.field select:focus{border-color:#80a7ea;box-shadow:0 0 0 4px rgba(23,59,130,.10)}
+.notice{border:1px solid #d6e4ff;background:#f5f8ff;border-radius:18px;padding:14px 15px;color:#344054;line-height:1.48;margin-top:14px}.notice strong{color:var(--ink)}.list{display:grid;gap:9px;margin:14px 0 0;padding:0;list-style:none}.list li{display:flex;gap:10px;align-items:flex-start;color:#475467;line-height:1.45}.list li::before{content:"";margin-top:.55em;width:7px;height:7px;border-radius:50%;background:#173b82;flex:0 0 7px}.route-strip{display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:#667085;font-weight:850;margin-top:16px}.route-strip a{color:#173b82}.route-strip span{color:#a3acba}.footer{margin-top:28px;color:var(--muted);text-align:center;font-size:.9rem}.mobile-only{display:none}.hide{display:none!important}
+@media(max-width:920px){.hero{grid-template-columns:1fr;padding:26px}.topbar{position:static;align-items:flex-start;flex-direction:column}.nav{justify-content:flex-start}.card,.card.wide,.card.small{grid-column:1/-1}.kpis{grid-template-columns:1fr}.shell{width:min(100% - 20px,1180px);padding-top:10px}h1{max-width:100%}.mobile-only{display:inline-flex}}
 </style>
 </head>
 <body>
 <main class="shell">
+  <header class="topbar">
+    <a class="brand" href="https://mathbase1.github.io/11-plus-dashboard/" aria-label="Go to dashboard">
+      <span class="logo">11+</span>
+      <span class="brand-text"><strong>MathBase Prep</strong><span>Selective school readiness</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="" href="https://mathbase1.github.io/11-plus-dashboard/">Dashboard</a>
+<a class="" href="https://mathbase1.github.io/11-plus-main-menu/">Main menu</a>
+<a class="active" href="https://mathbase1.github.io/11-plus-practice-menu/">Practice</a>
+<a class="" href="https://mathbase1.github.io/11-plus-exams-menu/">Exams</a>
+<a class="" href="https://mathbase1.github.io/11-plus-maths-menu/">Maths</a>
+<a class="" href="https://mathbase1.github.io/11-plus-english-menu/">English</a>
+<a class="" href="https://mathbase1.github.io/11-plus-verbal-reasoning-menu/">Verbal Reasoning</a>
+      <button type="button" data-reset-learner>Reset learner</button>
+    </nav>
+  </header>
 
-<header class="topbar">
-  <a class="brand" href="dashboard.html"><span class="logo">11+</span><span>MathBase Prep</span></a>
-  <nav class="nav" aria-label="Main navigation">
-    <a href="dashboard.html" data-active="dashboard">Dashboard</a>
-    <a href="practice.html" data-active="practice">Practice Quests</a>
-    <a href="exams.html" data-active="exams">Exam Practice</a>
-    <a href="maths.html" data-active="maths">Maths</a>
-    <a href="english.html" data-active="english">English</a>
-    <a href="verbal-reasoning.html" data-active="vr">Verbal Reasoning</a>
-    <button type="button" onclick="signOut()">Sign out</button>
-  </nav>
-</header>
+  <section class="hero">
+    <div>
+      <div class="eyebrow"><span class="spark"></span>Practice menu</div>
+      <h1>Practice quests.</h1>
+      <p class="lead">Choose the activity-style practice module for the subject the student is working on today.</p>
+      <div class="route-strip"><a href="https://mathbase1.github.io/11-plus-dashboard/">Dashboard</a><span>/</span><a href="https://mathbase1.github.io/11-plus-main-menu/">Main menu</a><span>/</span><strong>Practice Menu</strong></div>
+    </div>
+    <aside class="hero-card"><h2>Practice quests</h2><p>Topic-first practice for building accuracy before full exam-style papers.</p><div class="chips"><span class="chip">Adaptive Maths</span><span class="chip">No typed English</span><span class="chip">Explained VR</span></div></aside>
+  </section>
 
-
-<section class="hero">
-  <div>
-    <div class="mode-label"><span class="dot"></span> Practice quest menu</div>
-    <h1>Practice Quests</h1>
-    <p class="lead">Skill-building activities for students to use outside a full test. Each button opens the correct hosted practice activity.</p>
-  </div>
-  <div class="hero-panel">
-    <h2>Best for</h2>
-    <p>Topic confidence, revision, immediate feedback and low-pressure practice.</p>
-    <div class="notice">Logged in as <strong data-name>student</strong></div>
-  </div>
-</section>
+  
+<section class="section-head"><div><h2>Practice activities</h2><p>These buttons open the hosted practice quest pages.</p></div></section>
 <section class="grid">
-  <article class="card wide"><div><div class="icon">M</div><h2>Maths Practice Quest</h2><p>Topic-based 11+ maths practice covering arithmetic, fractions, ratio, problem solving, measure, shape, spatial reasoning, probability and data.</p></div><div class="actions"><a class="btn" href="https://mathbase1.github.io/11plus-practice-quest/" data-launch="mathPractice">Open Maths Practice Quest</a></div></article>
-  <article class="card wide"><div><div class="icon">E</div><h2>English Practice Quest</h2><p>11+ English practice using selectable answers, cloze, reordering, proofreading and comprehension-style tasks.</p></div><div class="actions"><a class="btn" href="https://mathbase1.github.io/eleven-plus-English-practice/" data-launch="englishPractice">Open English Practice Quest</a></div></article>
-  <article class="card wide"><div><div class="icon">VR</div><h2>Verbal Reasoning Practice Quest</h2><p>Verbal reasoning practice for vocabulary, logic, word relationships, code patterns and reasoning speed.</p></div><div class="actions"><a class="btn" href="https://mathbase1.github.io/eleven-plus-verbal-reasoning-practice/" data-launch="vrPractice">Open VR Practice Quest</a></div></article>
-  <article class="card wide"><div><div class="icon">→</div><h2>Need exam conditions?</h2><p>Use the exam practice menu when the student is ready for a standard timed simulation.</p></div><div class="actions"><a class="btn green" href="exams.html">Go to Exam Practice</a></div></article>
+  
+<article class="card tall" data-theme="maths">
+  <div><div class="icon">M</div><h2>Maths Practice Quest</h2><p>Adaptive UK 11+ Maths practice with topic menus, hints and generated variants.</p></div>
+  <div class="actions"><a class="btn teal" href="https://mathbase1.github.io/11plus-practice-quest/" data-track="Maths practice">Launch Maths Practice</a><a class="btn secondary" href="https://mathbase1.github.io/11-plus-maths-menu/" data-track="Maths menu">Maths menu</a></div>
+</article>
+  
+<article class="card tall" data-theme="english">
+  <div><div class="icon">E</div><h2>English Practice Quest</h2><p>Multiple-choice, cloze, drag-and-drop style English practice without typed marking.</p></div>
+  <div class="actions"><a class="btn purple" href="https://mathbase1.github.io/eleven-plus-English-practice/" data-track="English practice">Launch English Practice</a><a class="btn secondary" href="https://mathbase1.github.io/11-plus-english-menu/" data-track="English menu">English menu</a></div>
+</article>
+  
+<article class="card tall" data-theme="verbal">
+  <div><div class="icon">VR</div><h2>Verbal Reasoning Practice Quest</h2><p>11+ verbal reasoning practice with explanations and no typed responses.</p></div>
+  <div class="actions"><a class="btn teal" href="https://mathbase1.github.io/eleven-plus-verbal-reasoning-practice/" data-track="VR practice">Launch VR Practice</a><a class="btn secondary" href="https://mathbase1.github.io/11-plus-verbal-reasoning-menu/" data-track="VR menu">VR menu</a></div>
+</article>
 </section>
+<section class="panel"><h2>Practice mode purpose</h2><ul class="list"><li>Use for skill-building, topic familiarity and confidence.</li><li>Return to subject menus when a student needs focused preparation.</li><li>Move to exam practice when the student is ready for a more formal simulation.</li></ul></section>
 
-<footer class="footer">11+ preparation prototype menu · HTML-only flat files for GitHub preview</footer>
+
+  <footer class="footer">Prototype menu layer only. All quiz and exam buttons open the hosted GitHub Pages activities supplied for this app.</footer>
 </main>
 <script>
-const QUIZ_LINKS = {'mathPractice': 'https://mathbase1.github.io/11plus-practice-quest/', 'mathExam': 'https://mathbase1.github.io/11plus-exam/', 'englishPractice': 'https://mathbase1.github.io/eleven-plus-English-practice/', 'englishExam': 'https://mathbase1.github.io/eleven-plus-English-exam/', 'vrPractice': 'https://mathbase1.github.io/eleven-plus-verbal-reasoning-practice/', 'vrExam': 'https://mathbase1.github.io/eleven-plus-verbal-reasoning-exam/'};
-function byId(id){return document.getElementById(id)}
-function getName(){return localStorage.getItem('mb11LearnerName') || 'Guest learner'}
-function setName(name){localStorage.setItem('mb11LearnerName', name && name.trim() ? name.trim() : 'Guest learner')}
-function getHistory(){try{return JSON.parse(localStorage.getItem('mb11LaunchHistory')||'[]')}catch(e){return []}}
-function saveHistory(history){localStorage.setItem('mb11LaunchHistory', JSON.stringify(history.slice(-40)))}
-function trackLaunch(key){
-  const history = getHistory();
-  history.push({key, url:QUIZ_LINKS[key], at:new Date().toISOString()});
-  saveHistory(history);
+const ROUTES = {'dashboard': 'https://mathbase1.github.io/11-plus-dashboard/', 'englishMenu': 'https://mathbase1.github.io/11-plus-english-menu/', 'mathsMenu': 'https://mathbase1.github.io/11-plus-maths-menu/', 'verbalMenu': 'https://mathbase1.github.io/11-plus-verbal-reasoning-menu/', 'examsMenu': 'https://mathbase1.github.io/11-plus-exams-menu/', 'practiceMenu': 'https://mathbase1.github.io/11-plus-practice-menu/', 'mainMenu': 'https://mathbase1.github.io/11-plus-main-menu/', 'vrExam': 'https://mathbase1.github.io/eleven-plus-verbal-reasoning-exam/', 'vrPractice': 'https://mathbase1.github.io/eleven-plus-verbal-reasoning-practice/', 'englishExam': 'https://mathbase1.github.io/eleven-plus-English-exam/', 'englishPractice': 'https://mathbase1.github.io/eleven-plus-English-practice/', 'mathsPractice': 'https://mathbase1.github.io/11plus-practice-quest/', 'mathsExam': 'https://mathbase1.github.io/11plus-exam/'};
+const storageKey = "mathbase11PlusLearner";
+function getLearner() {
+  try { return JSON.parse(localStorage.getItem(storageKey) || "{}"); } catch(e) { return {}; }
 }
-function openQuiz(key){trackLaunch(key); window.location.href = QUIZ_LINKS[key];}
-function signOut(){localStorage.removeItem('mb11LearnerName'); window.location.href='index.html'}
-function hydrateShell(active){
-  document.querySelectorAll('[data-name]').forEach(el => el.textContent = getName());
-  document.querySelectorAll('[data-active="'+active+'"]').forEach(el => el.classList.add('active'));
-  document.querySelectorAll('[data-launch]').forEach(el => el.addEventListener('click', () => trackLaunch(el.getAttribute('data-launch'))));
-  const h = getHistory();
-  document.querySelectorAll('[data-launch-count]').forEach(el => el.textContent = String(h.length));
-  const last = h[h.length-1];
-  document.querySelectorAll('[data-last-launch]').forEach(el => el.textContent = last ? last.key.replace(/([A-Z])/g,' $1').replace(/^./,c=>c.toUpperCase()) : 'None yet');
+function setLearner(data) {
+  const existing = getLearner();
+  localStorage.setItem(storageKey, JSON.stringify(Object.assign({}, existing, data, { updatedAt: new Date().toISOString() })));
 }
+function greet() {
+  const h = new Date().getHours();
+  if (h < 12) return "Good morning";
+  if (h < 18) return "Good afternoon";
+  return "Good evening";
+}
+function markLaunch(name) { setLearner({ lastLaunch: name, lastLaunchAt: new Date().toISOString() }); }
+function initCommon() {
+  const learner = getLearner();
+  document.querySelectorAll('[data-learner-name]').forEach(el => el.textContent = learner.name || "Guest learner");
+  document.querySelectorAll('[data-year-group]').forEach(el => el.textContent = learner.year || "11+ prep");
+  document.querySelectorAll('[data-greeting]').forEach(el => el.textContent = greet());
+  document.querySelectorAll('[data-route]').forEach(el => {
+    const key = el.getAttribute('data-route');
+    if (ROUTES[key]) el.setAttribute('href', ROUTES[key]);
+  });
+  document.querySelectorAll('[data-track]').forEach(el => el.addEventListener('click', () => markLaunch(el.getAttribute('data-track'))));
+  const reset = document.querySelector('[data-reset-learner]');
+  if (reset) reset.addEventListener('click', () => { localStorage.removeItem(storageKey); location.reload(); });
+}
+document.addEventListener('DOMContentLoaded', initCommon);
 
-hydrateShell('practice');
 </script>
 </body>
 </html>
