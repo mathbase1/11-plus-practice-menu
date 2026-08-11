@@ -5,8 +5,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#0b214a">
-        <meta name="description" content="MathBase Prep 11+ learner login with direct access to practice, exams, dashboard and learner progress.">
-        <title>11+ Login | MathBase Prep</title>
+        <meta name="description" content="Choose Maths, English, Verbal Reasoning or Non-Verbal Reasoning practice for UK 11+ preparation.">
+        <title>11+ Practice Menu | MathBase Prep</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -849,64 +849,72 @@ h1, h2, h3, p { margin-top: 0; }
     </button>
     <nav class="nav" id="primaryNav" aria-label="Primary navigation">
       <a class="" href="https://mathbase1.github.io/11-plus-dashboard/" data-track="Dashboard">Dashboard</a>
-      <a class="" href="https://mathbase1.github.io/11-plus-practice-menu/" data-track="Practice">Practice</a>
+      <a class=" active" href="https://mathbase1.github.io/11-plus-practice-menu/" data-track="Practice" aria-current="page">Practice</a>
       <a class="" href="https://mathbase1.github.io/11-plus-exams-menu/" data-track="Exams">Exams</a>
       <a class="progress-link" href="https://mathbase1.github.io/data/" data-track="My Performance">My Performance</a>
     </nav>
   </div>
 </header>
     <main>
-      <section class="login-layout" aria-labelledby="pageTitle">
-        <div class="welcome-panel">
-          <div class="eyebrow">11+ learner access</div>
-          <h1 id="pageTitle">One clear place to begin.</h1>
-          <p>Sign in to continue to the dashboard, or open the two learning routes directly. All subject choices are kept inside the Practice and Exams menus.</p>
-
-          <div class="mode-actions" aria-label="Learning routes">
-            <a class="mode-button" href="https://mathbase1.github.io/11-plus-practice-menu/" data-track="Practice menu from login">
-              <span class="mode-button-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11 12 14 22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></span>
-              <span><strong>Practice</strong><small>Build skills by subject</small></span>
-            </a>
-            <a class="mode-button" href="https://mathbase1.github.io/11-plus-exams-menu/" data-track="Exam menu from login">
-              <span class="mode-button-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span>
-              <span><strong>Exams</strong><small>Start an exam simulation</small></span>
-            </a>
-          </div>
-          <p class="mode-note">Your dashboard and progress area remain available from the navigation above.</p>
+      <section class="page-hero" aria-labelledby="pageTitle">
+        <div>
+          <div class="eyebrow">Practice</div>
+          <h1 id="pageTitle">Practice by subject.</h1>
+          <p>Choose one of the four 11+ subject areas and work through targeted questions at your own pace.</p>
         </div>
+        <div class="hero-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11 12 14 22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></div>
+      </section>
 
-        <aside class="login-card" aria-labelledby="loginTitle">
-          <div class="form-kicker">Student login</div>
-          <h2 id="loginTitle">Continue to your dashboard</h2>
-          <p>Enter the learner details used to personalise this browser-based 11+ experience.</p>
-
-          <form id="loginForm">
-            <div class="field-grid">
-              <div class="field full">
-                <label for="learnerName">Student name</label>
-                <input id="learnerName" name="learnerName" type="text" placeholder="Enter student name" autocomplete="name" maxlength="60" required>
-              </div>
-              <div class="field full">
-                <label for="yearGroup">Year group</label>
-                <select id="yearGroup" name="yearGroup">
-                  <option>Year 4</option>
-                  <option selected>Year 5</option>
-                  <option>Year 6</option>
-                </select>
-              </div>
-            </div>
-
-            <button class="primary-button" type="submit">
-              Continue to dashboard
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
-            </button>
-          </form>
-
-          <p class="device-note">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>
-            <span>Learner details are stored only in this browser.</span>
-          </p>
-        </aside>
+      <section class="subject-section" aria-labelledby="subjectTitle">
+        <div class="section-heading">
+          <div>
+            <h2 id="subjectTitle">Choose a subject</h2>
+            <p>Each button opens the dedicated hosted practice quest directly.</p>
+          </div>
+          <span class="subject-count">4 subjects</span>
+        </div>
+        <div class="subject-grid">
+          <article class="subject-card" data-theme="maths">
+  <div class="subject-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h6M8 4v6M14 6h5M14 17h5M16.5 14.5v5M5 15l6 6M11 15l-6 6"></path></svg></div>
+  <span class="card-label">Practice quest</span>
+  <h3>Maths</h3>
+  <p>Build accuracy across 11+ number, arithmetic, problem-solving and reasoning topics.</p>
+  <a class="card-action" href="https://mathbase1.github.io/11plus-practice-quest/" data-track="Maths practice">
+    <span>Start Maths Practice</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+  </a>
+</article>
+<article class="subject-card" data-theme="english">
+  <div class="subject-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5v-16Z"></path><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5a2.5 2.5 0 0 1 2.5 2.5v-16Z"></path></svg></div>
+  <span class="card-label">Practice quest</span>
+  <h3>English</h3>
+  <p>Develop comprehension, vocabulary, grammar and language skills through interactive practice.</p>
+  <a class="card-action" href="https://mathbase1.github.io/eleven-plus-English-practice/" data-track="English practice">
+    <span>Start English Practice</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+  </a>
+</article>
+<article class="subject-card" data-theme="verbal">
+  <div class="subject-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16M4 12h10M4 19h7"></path><path d="m16 16 2 2 3-4"></path></svg></div>
+  <span class="card-label">Practice quest</span>
+  <h3>Verbal Reasoning</h3>
+  <p>Practise word-based reasoning, relationships, codes and verbal problem-solving skills.</p>
+  <a class="card-action" href="https://mathbase1.github.io/eleven-plus-verbal-reasoning-practice/" data-track="Verbal reasoning practice">
+    <span>Start Verbal Reasoning</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+  </a>
+</article>
+<article class="subject-card" data-theme="nonverbal">
+  <div class="subject-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"></rect><path d="m17.5 3 3.5 6h-7l3.5-6Z"></path><circle cx="7" cy="17" r="3.5"></circle><path d="M15 14h6v6h-6z"></path></svg></div>
+  <span class="card-label">Practice quest</span>
+  <h3>Non‑Verbal Reasoning</h3>
+  <p>Strengthen visual pattern recognition, spatial reasoning and shape-based problem solving.</p>
+  <a class="card-action" href="https://mathbase1.github.io/nvr-prac/" data-track="Non-verbal reasoning practice">
+    <span>Start Non‑Verbal Reasoning</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+  </a>
+</article>
+        </div>
       </section>
     </main>
         </div>
@@ -982,37 +990,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initialiseNavigation();
   initialiseTracking();
 });
-
-function initialiseLogin() {
-  const learner = readLearner();
-  const nameInput = document.getElementById("learnerName");
-  const yearSelect = document.getElementById("yearGroup");
-  const form = document.getElementById("loginForm");
-
-  if (nameInput && learner.name && learner.name !== "Guest learner") nameInput.value = learner.name;
-  if (yearSelect && learner.year) yearSelect.value = learner.year;
-
-  if (form) {
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const name = nameInput.value.trim();
-      if (!name) {
-        nameInput.focus();
-        return;
-      }
-      writeLearner({
-        name,
-        year: yearSelect.value,
-        signedInAt: new Date().toISOString(),
-        lastLaunch: "Dashboard",
-        lastLaunchAt: new Date().toISOString()
-      });
-      window.location.href = "https://mathbase1.github.io/11-plus-dashboard/";
-    });
-  }
-}
-
-document.addEventListener("DOMContentLoaded", initialiseLogin);
         </script>
       </body>
       </html>
