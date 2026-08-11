@@ -199,7 +199,11 @@ h1, h2, h3, p { margin-top: 0; }
   line-height: 1.58;
 }
 .developer-notes strong { display: block; margin-bottom: 5px; color: #991b1b; font-size: .82rem; letter-spacing: .01em; }
-.developer-notes p { margin-bottom: 0; }
+.developer-notes p { margin: 0 0 8px; }
+.developer-notes p:last-child { margin-bottom: 0; }
+.developer-notes ul { margin: 8px 0 0; padding-left: 20px; }
+.developer-notes li { margin: 4px 0; }
+.developer-notes b { color: #7f1d1d; }
 
 @media (max-width: 900px) {
   .topbar { position: relative; top: auto; }
@@ -263,75 +267,6 @@ h1, h2, h3, p { margin-top: 0; }
 @media (max-width: 1000px) { .subject-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media (max-width: 900px) { .menu-hero { grid-template-columns: 1fr; } .hero-symbol { display: none; } }
 @media (max-width: 650px) { .menu-hero { margin-top: 16px; padding: 28px 21px; border-radius: 25px; } .menu-hero h1 { max-width: 13ch; font-size: clamp(2.35rem,12vw,3.8rem); } .subject-grid { grid-template-columns: 1fr; } .subject-card { min-height: 265px; } }
-
-
-/* Professional interface finishing pass */
-html { color-scheme: light; }
-body {
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-main, section, article, aside, nav { min-width: 0; }
-.topbar {
-  border-color: rgba(203, 213, 225, .9);
-  box-shadow: 0 14px 38px rgba(15, 23, 42, .075);
-}
-.brand-copy strong { letter-spacing: -.025em; }
-.nav a, .nav .logout-button { letter-spacing: -.01em; }
-.card { border-color: rgba(203, 213, 225, .82); }
-.developer-notes {
-  box-shadow: 0 10px 28px rgba(127, 29, 29, .06);
-}
-.developer-notes > strong {
-  margin-bottom: 10px;
-  font-size: .88rem;
-}
-.developer-notes ul {
-  display: grid;
-  gap: 8px;
-  margin: 0;
-  padding-left: 1.2rem;
-}
-.developer-notes li { padding-left: 2px; }
-.developer-notes b { color: #7f1d1d; }
-.developer-notes code {
-  padding: 1px 5px;
-  border: 1px solid #fecaca;
-  border-radius: 6px;
-  background: rgba(255,255,255,.72);
-  color: #7f1d1d;
-  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  font-size: .92em;
-  overflow-wrap: anywhere;
-}
-@media (max-width: 1120px) and (min-width: 901px) {
-  .nav a, .nav .logout-button { padding-inline: 10px; font-size: .78rem; }
-}
-@media (max-width: 900px) {
-  .nav { max-height: min(70vh, 430px); overflow-y: auto; overscroll-behavior: contain; }
-}
-@media (max-width: 480px) {
-  .shell { width: min(100% - 16px, 1220px); }
-  .topbar { padding-inline: 10px; }
-  .logo { width: 42px; height: 42px; border-radius: 14px; }
-  .developer-notes { margin-top: 26px; border-radius: 15px; font-size: .74rem; }
-}
-@media (forced-colors: active) {
-  .topbar, .card, .developer-notes { border: 1px solid CanvasText; }
-  .nav a.active, .primary-button, .card-action, .view-button { forced-color-adjust: none; }
-}
-
-
-.subject-card {
-  border-top: 3px solid var(--accent);
-  box-shadow: 0 12px 32px rgba(15,23,42,.07);
-}
-.subject-card h3 { font-size: 1.22rem; }
-.card-action { min-height: 50px; }
-@media (max-width: 1120px) { .subject-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
-@media (max-width: 650px) { .subject-grid { grid-template-columns: 1fr; } }
-
 </style>
 </head>
 <body data-page="practice">
@@ -395,13 +330,11 @@ main, section, article, aside, nav { min-width: 0; }
 </article></div>
   </section>
 </main>
-<aside class="developer-notes" aria-label="Developer notes"><strong>Developer notes — do not include on real pages</strong><ul>
-  <li><b>Data entering this page:</b> the authenticated learner/session identity and a practice catalogue containing subject key, display name, description, availability and destination URL for Maths, English, Verbal Reasoning and Non-Verbal Reasoning.</li>
-  <li><b>Current source:</b> the four catalogue cards and their URLs are embedded in this HTML; the learner username and last navigation action use <code>localStorage.mathbase11PlusLearner</code>. In the production Cloudways application, return the learner’s permitted practice modules from the backend so disabled, unavailable or subscription-restricted modules can be handled safely.</li>
-  <li><b>Required links:</b> Maths → <code>11plus-practice-quest</code>, English → <code>eleven-plus-English-practice</code>, Verbal Reasoning → <code>eleven-plus-verbal-reasoning-practice</code>, and Non-Verbal Reasoning → <code>nvr-prac</code>. Header links must continue to Dashboard, Practice, Exams, My Performance and the <code>11plus-pem</code> login page on Log out.</li>
-  <li><b>How saved student data updates this page:</b> account/session data identifies the learner and may determine which practice cards are available. Card selection currently records only the last launch. Practice activities may save topic practice progress, but this menu must not add practice sessions to the exam-only performance history unless the product specification is deliberately changed.</li>
-  <li><b>Production hand-off:</b> fetch catalogue and entitlement data after authentication, log launches against the learner account when required, and keep all activity URLs in one server-managed configuration. Remove this red box before release.</li>
-</ul></aside>
+<aside class="developer-notes"><strong>Developer notes — do not include on real pages</strong>
+<p><b>Prototype inputs:</b> the four subject cards use the supplied practice destinations and require no learner data to render.</p>
+<p><b>Suggested production data contract:</b> load the authenticated account alias, the enabled practice catalogue and, where required, each subject’s latest practice progress. Keep activity destinations in server-side or environment configuration rather than hard-coding deployment URLs into the page.</p>
+<p><b>Update flow:</b> practice activities may save topic, question count, correct count, duration and completion time to a separate practice-history endpoint. Do not mix practice attempts into the exam-only My Performance calculations unless the product specification is deliberately changed.</p>
+<p><b>Production access:</b> require a valid learner session before opening the menu or any protected activity. Logout must revoke the server session and return to the production login route. Current GitHub navigation is present only to demonstrate the prototype journey.</p></aside>
 </div>
   <script>
 const MATHBASE_ROUTES = Object.freeze({"dashboard": "https://mathbase1.github.io/11-plus-dashboard/", "practice": "https://mathbase1.github.io/11-plus-practice-menu/", "exams": "https://mathbase1.github.io/11-plus-exams-menu/", "performance": "https://mathbase1.github.io/data/", "login": "https://mathbase1.github.io/11plus-pem/", "mathsPractice": "https://mathbase1.github.io/11plus-practice-quest/", "englishPractice": "https://mathbase1.github.io/eleven-plus-English-practice/", "verbalPractice": "https://mathbase1.github.io/eleven-plus-verbal-reasoning-practice/", "nonverbalPractice": "https://mathbase1.github.io/nvr-prac/", "mathsExam": "https://mathbase1.github.io/11plus-exam/", "englishExam": "https://mathbase1.github.io/eleven-plus-English-exam/", "verbalExam": "https://mathbase1.github.io/eleven-plus-verbal-reasoning-exam/", "nonverbalExam": "https://mathbase1.github.io/nvr-exam/"});
@@ -430,15 +363,7 @@ function logOutMathBase(event) {
 }
 
 function greetingForCurrentTime() {
-  let hour = new Date().getHours();
-  try {
-    const part = new Intl.DateTimeFormat("en-GB", {
-      timeZone: "Europe/London",
-      hour: "2-digit",
-      hour12: false
-    }).formatToParts(new Date()).find((item) => item.type === "hour");
-    if (part) hour = Number(part.value) % 24;
-  } catch (error) { /* Use the device hour when time-zone formatting is unavailable. */ }
+  const hour = new Date().getHours();
   if (hour < 12) return "Good morning";
   if (hour < 18) return "Good afternoon";
   return "Good evening";
@@ -446,15 +371,11 @@ function greetingForCurrentTime() {
 
 function hydrateCommonUI() {
   const profile = readMathBaseProfile();
-  const username = String(profile.username || profile.name || "CK223");
+  const username = String(profile.username || profile.name || "Learner");
   document.querySelectorAll("[data-username]").forEach((element) => { element.textContent = username; });
   document.querySelectorAll("[data-greeting]").forEach((element) => { element.textContent = greetingForCurrentTime(); });
   document.querySelectorAll("[data-user-initials]").forEach((element) => {
-    const parts = username.split(/[\s._-]+/).filter(Boolean);
-    const compact = username.replace(/[^a-z0-9]/gi, "").toUpperCase();
-    const letters = parts.length > 1
-      ? parts.slice(0, 2).map((part) => part.charAt(0).toUpperCase()).join("")
-      : compact.slice(0, 2) || "CK";
+    const letters = username.split(/[\s._-]+/).filter(Boolean).slice(0,2).map((part) => part.charAt(0).toUpperCase()).join("") || "L";
     element.textContent = letters;
   });
 }
